@@ -1,0 +1,11 @@
+title: My Blog
+description: A simple blog website with a clean design.
+url: "https://yourusername.github.io"
+baseurl: "/"
+theme: "jekyll-theme-slate"  # You can use a built-in theme or customize later
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+paginate: 10
+paginate_path: "/page:num/"
