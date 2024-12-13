@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="blog-header">
+        <div class="container">
+            <h1>Websites Blog</h1>
+        </div>
+    </header>
+
+    <!-- Blog Post List Section -->
+    <section class="blog-posts">
+        <div class="container">
+            {% for post in site.posts limit:10 %}
+            <div class="post">
+                <div class="post-image">
+                    <img src="{{ post.image }}" alt="{{ post.title }}">
+                </div>
+                <div class="post-content">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                    <a href="{{ post.url }}" class="read-more">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+</body>
+</html>
